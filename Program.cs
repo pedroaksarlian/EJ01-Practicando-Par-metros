@@ -31,18 +31,25 @@
             case 2: 
             int idProgram;
             Tarea tareaMostrar = null;
+            bool tareaMos = false;
             Console.WriteLine ("Ingrese el ID de la tarea: ");
             idProgram = int.Parse(Console.ReadLine());
-            tareaMostrar = gestor.buscarTarea(idProgram);
-            tareaMostrar.mostrarDatos();
+            if(gestor.buscarTareas(idProgram) == true)
+            {
+                tareaMostrar.mostrarDatos();
+            }
             break; 
 
             case 3:
             int idP;
             Console.WriteLine ("Ingrese el ID de la tarea: ");
             idP = int.Parse(Console.ReadLine());
-            gestor.marcarTareaCompletada(idP);
-            Console.WriteLine("Tarea marcada");
+            if(gestor.marcarTareaCompletada(idP) == true)
+            {
+                Console.WriteLine("Tarea Completada");
+            }else{
+                 Console.WriteLine("Tarea no completada");
+            }
             break;
 
             case 4:

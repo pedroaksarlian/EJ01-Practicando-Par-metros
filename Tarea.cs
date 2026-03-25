@@ -11,11 +11,6 @@ public class Tarea
         this.completada = false;
     }
 
-    internal bool esMismoId(int idBuscar)
-    {
-        return this.id == idBuscar;
-    }
-
     internal void marcarCompletada()
     {
         this.completada = true;

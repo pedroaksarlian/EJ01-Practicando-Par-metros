@@ -1,16 +1,17 @@
 public class GestorTareas
 {
     private Dictionary<int, Tarea> tareas;
+    private int id = 1;
 
     public GestorTareas()
     {
         tareas = new Dictionary<int, Tarea>();
+        this.id = 1;
     }
 
     public void agregarTareas(string descripcion)
     {
-        int id = 1;
-        Tarea tarea = new Tarea(descripcion);
+        Tarea tarea = new Tarea(descripcion, id);
         tareas.Add(id, tarea);
         id++;
     }
@@ -48,6 +49,15 @@ public class GestorTareas
             {
                 tareasMostrar.mostrarDatos();
             }
+        }
+    }
+
+    public void buscarXId(int idProgram)
+    {
+        bool tareaEncontrar = tareas.ContainsKey(idProgram);
+        if(tareaEncontrar == true)
+        {
+            tareas[idProgram].mostrarDatos();
         }
     }
 }

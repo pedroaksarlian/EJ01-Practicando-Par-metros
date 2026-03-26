@@ -30,13 +30,12 @@
 
             case 2: 
             int idProgram;
-            Tarea tareaMostrar = null;
             bool tareaMos = false;
             Console.WriteLine ("Ingrese el ID de la tarea: ");
             idProgram = int.Parse(Console.ReadLine());
             if(gestor.buscarTareas(idProgram) == true)
             {
-                tareaMostrar.mostrarDatos();
+                gestor.buscarXId(idProgram);
             }
             break; 
 

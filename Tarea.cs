@@ -1,14 +1,14 @@
 public class Tarea
 {
-    private int id;
     private string descripcion;
     private bool completada;
+    private int id;
 
-    public Tarea(string descripcion)
+    public Tarea(string descripcion, int id)
     {
-        this.id = 1;
         this.descripcion = descripcion;
         this.completada = false;
+        this.id = id;
     }
 
     internal void marcarCompletada()
